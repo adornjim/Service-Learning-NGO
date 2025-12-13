@@ -9,7 +9,8 @@ const HomePage: React.FC = () => {
       <section 
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("https://images.pexels.com/photos/6995247/pexels-photo-6995247.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop")'
+          backgroundImage:
+            'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("/ngoprofile.jpg")'
         }}
       >
         <div className="text-center text-white px-4 max-w-5xl mx-auto">

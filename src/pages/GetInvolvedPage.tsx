@@ -2,12 +2,9 @@ import React from 'react';
 import { 
   Users, 
   Heart, 
-  Handshake, 
-  TrendingUp, 
-  Clock, 
-  Globe, 
   CheckCircle,
-  ArrowRight 
+  ArrowRight,
+  Clock
 } from 'lucide-react';
 
 const GetInvolvedPage: React.FC = () => {
@@ -39,34 +36,6 @@ const GetInvolvedPage: React.FC = () => {
       ],
       color: 'bg-orange-500',
       cta: 'Make a Donation'
-    },
-    {
-      icon: Handshake,
-      title: 'Partner or Sponsor',
-      description: 'Join hands with us to scale social impact.',
-      details: [
-        'Corporate social responsibility partnerships',
-        'Program sponsorships and naming rights',
-        'Employee volunteer engagement programs',
-        'In-kind donations and resource sharing',
-        'Long-term strategic partnerships'
-      ],
-      color: 'bg-teal-500',
-      cta: 'Partner with Us'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Start a Fundraiser',
-      description: 'Support a cause you care about within our mission.',
-      details: [
-        'Birthday fundraisers for education',
-        'Wedding donations instead of gifts',
-        'Marathon and sports event fundraising',
-        'Social media awareness campaigns',
-        'Community challenge fundraisers'
-      ],
-      color: 'bg-green-500',
-      cta: 'Start Fundraising'
     }
   ];
 
@@ -149,10 +118,15 @@ const GetInvolvedPage: React.FC = () => {
                     ))}
                   </ul>
                   
-                  <button className={`w-full ${way.color} text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-2`}>
+                  <a
+                    href={way.title === 'Volunteer With Us' ? 'https://docs.google.com/forms/d/e/1FAIpQLSe-woL0zXCInXnF8xmL9ZXUJcotEt_w254Y-BRZqlD6SJuBPQ/viewform?usp=dialog' : '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full ${way.color} text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-2 inline-block text-center`}
+                  >
                     <span>{way.cta}</span>
                     <ArrowRight className="h-5 w-5" />
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
