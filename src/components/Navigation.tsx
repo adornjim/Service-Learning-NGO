@@ -5,6 +5,7 @@ import { Menu, X, Heart } from 'lucide-react';
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  
 
   const navItems = [
     { name: 'Home', path: '/' },

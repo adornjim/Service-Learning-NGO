@@ -6,8 +6,11 @@ import {
   ArrowRight,
   Clock
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
 
 const GetInvolvedPage: React.FC = () => {
+  const navigate = useNavigate();
   const ways = [
     {
       icon: Users,
@@ -118,15 +121,26 @@ const GetInvolvedPage: React.FC = () => {
                     ))}
                   </ul>
                   
-                  <a
-                    href={way.title === 'Volunteer With Us' ? 'https://docs.google.com/forms/d/e/1FAIpQLSe-woL0zXCInXnF8xmL9ZXUJcotEt_w254Y-BRZqlD6SJuBPQ/viewform?usp=dialog' : '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-full ${way.color} text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-2 inline-block text-center`}
-                  >
-                    <span>{way.cta}</span>
-                    <ArrowRight className="h-5 w-5" />
-                  </a>
+                  {way.title === 'Volunteer With Us' ? (
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSe-woL0zXCInXnF8xmL9ZXUJcotEt_w254Y-BRZqlD6SJuBPQ/viewform?usp=dialog"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full ${way.color} text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-2`}
+                    >
+                      <span>{way.cta}</span>
+                      <ArrowRight className="h-5 w-5" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => navigate('/donation')}
+                      className={`w-full ${way.color} text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-2`}
+                    >
+                      <span>{way.cta}</span>
+                      <ArrowRight className="h-5 w-5" />
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
