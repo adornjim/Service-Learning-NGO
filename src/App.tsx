@@ -8,6 +8,7 @@ import ImpactPage from './pages/ImpactPage';
 import GetInvolvedPage from './pages/GetInvolvedPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import DonatePage from './pages/DonatePage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/get-involved" element={<GetInvolvedPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/donation" element={<DonatePage />} />
         </Routes>
       </Layout>
     </Router>
